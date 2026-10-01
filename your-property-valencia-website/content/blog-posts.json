@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "category": "Market update",
+      "status": "Coming soon",
+      "title": "Valencia market report: where prices and rents are heading",
+      "excerpt": "A plain-English look at the latest data — price growth by district, rental demand, and which neighbourhoods are turning.",
+      "linkText": "Ask to be notified",
+      "linkUrl": "contact.html"
+    },
+    {
+      "category": "Beginner guide",
+      "status": "Coming soon",
+      "title": "Buying your first investment property in Spain, step by step",
+      "excerpt": "NIE, bank account, notary, taxes and purchase costs — the full process, and where first-timers usually get caught out.",
+      "linkText": "See the beginner path",
+      "linkUrl": "beginners.html"
+    },
+    {
+      "category": "Strategy",
+      "status": "Coming soon",
+      "title": "Room rental vs long-term let: which yields more in Valencia?",
+      "excerpt": "Real numbers from recent projects, plus how current regulation affects each model.",
+      "linkText": "See the investor path",
+      "linkUrl": "investors.html"
+    },
+    {
+      "category": "Case study",
+      "status": "Coming soon",
+      "title": "From bank repossession to 18% gross yield: the Benimaclet project",
+      "excerpt": "How a tired three-bed became a high-demand rental — the numbers, the renovation and the lessons.",
+      "linkText": "Read the case study",
+      "linkUrl": "case-studies.html#benimaclet"
+    },
+    {
+      "category": "Tax & legal",
+      "status": "Coming soon",
+      "title": "What non-residents need to know about Spanish property tax",
+      "excerpt": "Purchase taxes, annual obligations, and how ownership structure affects your return.",
+      "linkText": "Ask a question",
+      "linkUrl": "contact.html"
+    },
+    {
+      "category": "Neighbourhoods",
+      "status": "Coming soon",
+      "title": "Where to invest in Valencia in 2026: five districts to watch",
+      "excerpt": "Emerging areas with strong fundamentals — price-to-rent ratios, demand drivers and risk.",
+      "linkText": "Ask to be notified",
+      "linkUrl": "contact.html"
+    }
+  ]
+}

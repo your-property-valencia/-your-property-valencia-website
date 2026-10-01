@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# where uploaded photos are stored, and the URL path used to reach them —
+# matches the existing images/ folder the site already uses
+media_folder: "images"
+public_folder: "/images"
+
+publish_mode: simple
+
+collections:
+  - name: "site"
+    label: "Site content"
+    files:
+      - name: "blog"
+        label: "Blog posts"
+        file: "content/blog-posts.json"
+        description: "Cards shown on the Blog page. Add, edit or remove as many as you like."
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            label_singular: "Post"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Category tag", name: "category", widget: "string", hint: "Short label, e.g. \"Market update\"" }
+              - { label: "Status label (optional)", name: "status", widget: "string", required: false, hint: "e.g. \"Coming soon\" — leave blank once the article is live" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Link button text", name: "linkText", widget: "string", default: "Read more" }
+              - { label: "Link URL", name: "linkUrl", widget: "string", default: "contact.html", hint: "A page on the site (e.g. contact.html) or a full https:// link" }
+
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "content/testimonials.json"
+        description: "Client quotes shown on the homepage (all of them) and the New Investors page (the first two)."
+        fields:
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            label_singular: "Testimonial"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Client name", name: "name", widget: "string", hint: "e.g. \"Sarah J.\" — first name and last initial only" }
+              - { label: "Location", name: "location", widget: "string", hint: "e.g. \"London, UK\"" }
