@@ -4,7 +4,7 @@ backend:
 
 # where uploaded photos are stored, and the URL path used to reach them —
 # matches the existing images/ folder the site already uses
-media_folder: "images"
+media_folder: "your-property-valencia-website/images"
 public_folder: "/images"
 
 publish_mode: simple
@@ -15,7 +15,7 @@ collections:
     files:
       - name: "blog"
         label: "Blog posts"
-        file: "content/blog-posts.json"
+        file: "your-property-valencia-website/content/blog-posts.json"
         description: "Cards shown on the Blog page. Add, edit or remove as many as you like."
         fields:
           - label: "Posts"
@@ -33,7 +33,7 @@ collections:
 
       - name: "testimonials"
         label: "Testimonials"
-        file: "content/testimonials.json"
+        file: "your-property-valencia-website/content/testimonials.json"
         description: "Client quotes shown on the homepage (all of them) and the New Investors page (the first two)."
         fields:
           - label: "Testimonials"
