@@ -4,13 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Book a strategy call | Your Property Valencia</title>
-<meta name="description" content="Book a free strategy call with Sara, or send your questions. Honest conversation about your goals, budget and whether Valencia is the right fit — no sales pitch." />
+<meta name="description" content="Book a free strategy call with Sara, or send your questions. Honest conversation about your goals, budget and whether Valencia is the right fit, no sales pitch." />
 <link rel="canonical" href="https://yourpropertyvalencia.com/contact.html" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23cb5e3c'/%3E%3Cpath d='M8 17 L16 9 L24 17 M10 15.5 V24 H22 V15.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=13" />
+<link rel="stylesheet" href="css/styles.css?v=52" />
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -35,18 +35,24 @@
 <main id="main">
 
   <section class="section section--tint">
-    <div class="container narrow">
-      <p class="eyebrow">Contact</p>
-      <h1>Book a strategy call</h1>
-      <p class="lead">Tell me where you are and where you want to get to. We'll talk through your goals, budget and timeline &mdash; and whether Valencia is the right fit. No pressure, no sales pitch.</p>
+    <div class="container split contact-hero">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Book a strategy call</h1>
+        <p class="lead">Tell me where you are and where you want to get to. We'll talk through your goals, budget and timeline, and whether Valencia is the right fit. No pressure, no sales pitch.</p>
+        <a class="btn btn-primary btn-lg" href="https://calendly.com/sara-yourpropertyvalencia/30min" target="_blank" rel="noopener" style="margin-top:0.6rem">Book a time on my calendar</a>
+      </div>
+      <img class="contact-photo" src="images/cta-sara-desk.jpg" width="900" height="1125" alt="Sara smiling at her laptop, ready for your strategy call" />
     </div>
   </section>
 
   <section class="section">
-    <div class="container split">
+    <div class="container split split--top">
       <div class="reveal">
         <h2>Send a message</h2>
-        <form id="contactForm" class="form-grid" novalidate>
+        <form id="contactForm" class="form-grid" name="contact" method="POST" action="/contact.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
           <div class="form-row">
             <div class="field">
               <label for="name">Name</label>
@@ -89,15 +95,13 @@
         <h2>Or reach me directly</h2>
         <ul class="check-list" style="margin-bottom:2rem">
           <li><a href="mailto:info@yourpropertyvalencia.com">info@yourpropertyvalencia.com</a></li>
-          <li><a href="tel:+34641727124">+34 641 727 124</a></li>
-          <li><a href="https://wa.me/34641727124">WhatsApp: +34 641 727 124</a></li>
           <li>Valencia, Spain</li>
         </ul>
 
         <div class="card">
           <h3>Prefer to book straight into my calendar?</h3>
-          <p>A scheduling link (Calendly, Cal.com or similar) can be embedded here so clients pick a slot directly. See <code>README.md</code> for how to add it.</p>
-          <p class="mb-0"><a class="btn btn-outline" href="mailto:info@yourpropertyvalencia.com?subject=Strategy%20call">Email to arrange a time</a></p>
+          <p>Pick a time that suits you and we&rsquo;ll talk through your goals. The call is free, with no pressure.</p>
+          <p class="mb-0"><a class="btn btn-primary" href="https://calendly.com/sara-yourpropertyvalencia/30min" target="_blank" rel="noopener">Book a time</a></p>
         </div>
 
         <p class="form-note" style="margin-top:1.5rem">I usually reply within one business day. I speak English, Spanish, Catalan and French.</p>
@@ -111,7 +115,7 @@
   <div class="container footer-grid">
     <div>
       <p class="footer-brand">Your Property <span>Valencia</span></p>
-      <p>A strategic approach to investing in Valencia real estate. Personal, independent and transparent advice — from defining your investment strategy to finding the right opportunity and managing the process from start to finish.</p>
+      <p>A strategic approach to investing in Valencia real estate. Personal, independent and transparent advice, from defining your investment strategy to finding the right opportunity and managing the process from start to finish.</p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -128,8 +132,6 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="mailto:info@yourpropertyvalencia.com">info@yourpropertyvalencia.com</a></li>
-        <li><a href="tel:+34641727124">+34 641 727 124</a></li>
-        <li><a href="https://wa.me/34641727124">WhatsApp</a></li>
         <li>Valencia, Spain</li>
       </ul>
     </div>
@@ -140,6 +142,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=13" defer></script>
+<script src="js/main.js?v=52" defer></script>
+<script src="js/newsletter.js?v=52" defer></script>
 </body>
 </html>

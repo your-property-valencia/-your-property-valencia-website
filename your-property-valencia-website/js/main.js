@@ -59,29 +59,54 @@
     });
   }
 
-  /* ---------- contact form (front-end only) ----------
-     No backend yet. This shows a confirmation message and
-     keeps the entered data. To make it actually send, wire the
-     <form> up to Formspree / your booking tool — see README.md */
+  /* ---------- contact form ----------
+     Sent through Netlify Forms (see the data-netlify attributes in
+     contact.html). Submissions arrive in the Netlify dashboard and,
+     once a notification is set up there, in your inbox. */
   var form = document.getElementById("contactForm");
   if (form) {
     var status = form.querySelector(".form-status");
+    var button = form.querySelector(".btn");
+    var showStatus = function (text, isError) {
+      if (!status) return;
+      status.textContent = text;
+      status.classList.add("is-visible");
+      status.classList.toggle("is-error", !!isError);
+      status.setAttribute("role", "status");
+    };
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      if (status) {
-        var name = (form.querySelector('[name="name"]') || {}).value || "";
-        status.textContent =
-          "Thank you" +
-          (name ? ", " + name.split(" ")[0] : "") +
-          ". Your message is ready — connect the form to email or a booking tool to start receiving these (see README).";
-        status.classList.add("is-visible");
-        status.setAttribute("role", "status");
-      }
-      form.querySelector(".btn").textContent = "Message prepared";
+      var data = new URLSearchParams(new FormData(form)).toString();
+      var label = button.textContent;
+      button.disabled = true;
+      button.textContent = "Sending...";
+      fetch(form.getAttribute("action") || "/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data,
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Bad response");
+          var name = (form.querySelector('[name="name"]') || {}).value || "";
+          showStatus(
+            "Thank you" + (name ? ", " + name.split(" ")[0] : "") +
+              ". Your message has been sent and I'll get back to you as soon as I can."
+          );
+          form.reset();
+          button.textContent = "Message sent";
+        })
+        .catch(function () {
+          showStatus(
+            "Sorry, something went wrong and your message was not sent. Please email info@yourpropertyvalencia.com or book a time on my calendar instead.",
+            true
+          );
+          button.disabled = false;
+          button.textContent = label;
+        });
     });
   }
 

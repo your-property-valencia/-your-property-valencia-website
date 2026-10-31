@@ -49,7 +49,7 @@
               "<h2>" + escapeHtml(p.title) + "</h2>" +
               "<p>" + escapeHtml(p.excerpt) + "</p>" +
               '<p class="post-card__link"><a href="' + escapeAttr(p.linkUrl) + '">' +
-              escapeHtml(p.linkText || "Read more") + " &rarr;</a></p>" +
+              "Read more &rarr;</a></p>" +
               "</article>"
             );
           })

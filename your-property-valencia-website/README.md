@@ -92,12 +92,10 @@ Then visit `http://localhost:8000`.
    and Torrefiel. Your live site also has more photos per property (4/6/5) than the
    4 provided here — add the rest the same way.
 
-2. **Make the contact form send.** It currently only shows a confirmation.
-   Easiest option — [Formspree](https://formspree.io):
-   ```html
-   <form id="contactForm" class="form-grid" action="https://formspree.io/f/XXXX" method="POST" novalidate>
-   ```
-   and remove the `e.preventDefault()` block in `js/main.js`.
+2. **Contact form.** It uses Netlify Forms (the `data-netlify` attributes in
+   `contact.html`, posted by `js/main.js`). After the first deploy, open Netlify →
+   Forms → Form notifications → Add notification → Email, and enter the address
+   that should receive the messages. All submissions are also kept in Netlify → Forms.
 
 3. **Calendar booking.** In `contact.html`, replace the "Prefer to book straight
    into my calendar?" card with your Calendly / Cal.com embed snippet.
