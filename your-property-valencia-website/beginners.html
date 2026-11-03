@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=52" />
+<link rel="stylesheet" href="css/styles.css?v=54" />
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -280,21 +280,56 @@
     </div>
   </section>
 
-  <!-- GOOGLE REVIEWS: hidden until your Google reviews widget is connected.
-       To switch it on: paste the widget code inside <div id="google-reviews"> and delete the word  hidden  from the <section> line. -->
-  <section class="section" hidden>
+  <!-- GOOGLE REVIEWS: real reviews copied word for word from the Google Business Profile. -->
+  <section class="section section--alt" id="reviews">
     <div class="container">
       <div class="narrow reveal">
         <p class="eyebrow">Client stories</p>
         <h2>What clients say</h2>
       </div>
-      <div id="google-reviews" class="reveal" style="margin-top:2.4rem"></div>
-      <p style="margin-top:1.6rem"><a class="btn btn-outline" href="case-studies.html">View case studies</a></p>
+      <div class="reviews__summary reveal">
+        <span class="reviews__score">5.0</span>
+        <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>Based on 6 Google reviews</span>
+      </div>
+      <div class="grid grid-3 reviews">
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Working with Sara was an exceptional experience. She was incredibly helpful with evaluating my property listing, managing the paperwork, and keeping communication clear and prompt. On top of that, she smoothly coordinated the notary appointment, making the final steps a breeze. I highly recommend Sara's services to anyone looking for top-tier real estate support!</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">G</span><span><strong>Georgi K.</strong><small>Google review</small></span></figcaption>
+        </figure>
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Your Property Valencia is the ideal bridge between the Netherlands and Spain for us. Sara understands our Dutch directness and way of working, while simultaneously knowing the ins and outs of the Valencian real estate market. This ensures that we can act and communicate quickly together with her. In this way, together with Sara, we maintain a grip on everything happening around our projects and can be certain that we won't face any surprises.</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">T</span><span><strong>T. C.</strong><small>Google review, translated from Dutch</small></span></figcaption>
+        </figure>
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Five star service without question Sara guided me through the process answering all my many questions and has an incredibly calm and collected way of dealing with frankly stressful situations. Thank you, Sara!</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">K</span><span><strong>Kate B.</strong><small>Google review</small></span></figcaption>
+        </figure>
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Your Property Valencia is our reliable partner in Valencia.<br><br>Good communication and matters are taken care of before you even ask. Clear price agreements and value for money!</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">D</span><span><strong>Dan C.</strong><small>Google review, translated from Dutch</small></span></figcaption>
+        </figure>
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Sara is incredibly professional. She guided and advised me with the utmost patience every step of the way. I highly recommend her!</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">E</span><span><strong>Elisa P.</strong><small>Google review, translated from Spanish</small></span></figcaption>
+        </figure>
+        <figure class="card review-card reveal">
+          <span class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>So happy with this service and how communication is going. Love the efficiency!</blockquote>
+          <figcaption><span class="review-card__avatar" aria-hidden="true">B</span><span><strong>Bruisend Beheer</strong><small>Google review</small></span></figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:2.4rem"><a class="btn btn-outline" href="https://search.google.com/local/reviews?placeid=ChIJETZoNlUR648RcdY-A3rYVTU" target="_blank" rel="noopener">See all reviews on Google</a></p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section section--alt">
+  <section class="section">
     <div class="container">
       <div class="narrow reveal">
         <p class="eyebrow">Good to know</p>
@@ -321,7 +356,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--flush-top">
     <div class="container">
       <div class="cta-band reveal">
         <p class="eyebrow">Your first step</p>
@@ -361,12 +396,13 @@
   </div>
   <div class="container footer-bottom">
     <span>&copy; <span data-year>2026</span> Your Property Valencia. All rights reserved.</span>
+    <nav class="footer-legal" aria-label="Legal"><a href="legal-notice.html">Legal notice</a><a href="privacy-policy.html">Privacy policy</a><a href="cookie-policy.html">Cookie policy</a></nav>
     <span>English &middot; Español &middot; Català &middot; Français</span>
   </div>
 </footer>
 
-<script src="js/content.js?v=52" defer></script>
-<script src="js/main.js?v=52" defer></script>
-<script src="js/newsletter.js?v=52" defer></script>
+<script src="js/content.js?v=54" defer></script>
+<script src="js/main.js?v=54" defer></script>
+<script src="js/newsletter.js?v=54" defer></script>
 </body>
 </html>

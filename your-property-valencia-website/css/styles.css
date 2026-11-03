@@ -2358,3 +2358,92 @@ strong {
 #strategies .card h3 {
   color: var(--brand-strong);
 }
+
+/* ---------- Google reviews ---------- */
+.stars {
+  color: var(--brand);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+.reviews__summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-top: 1.4rem;
+  color: var(--ink);
+}
+.reviews__score {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+.reviews {
+  margin-top: 1.6rem;
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+}
+.review-card blockquote {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.65;
+}
+.review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+.review-card figcaption small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.review-card__avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+}
+.section--flush-top {
+  padding-top: 0;
+}
+
+/* ---------- legal pages + footer legal links ---------- */
+.legal {
+  max-width: 46rem;
+}
+.legal h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-bottom: 0.4rem;
+}
+.legal h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.5rem;
+}
+.legal__updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.legal ul {
+  padding-left: 1.2rem;
+  margin: 0 0 1.1rem;
+}
+.legal li {
+  margin-bottom: 0.4rem;
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
