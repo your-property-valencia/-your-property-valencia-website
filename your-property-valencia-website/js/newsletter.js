@@ -118,15 +118,23 @@
 
   /* show after a delay, or once the visitor has read most of the page */
   setTimeout(open, SHOW_AFTER_MS);
-  window.addEventListener(
-    "scroll",
-    function onScroll() {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max > 0 && window.scrollY / max > 0.6) {
+  var ticking = false;
+  var maxScroll = 0;
+  function measure() {
+    maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      if (!maxScroll) measure();
+      if (maxScroll > 0 && window.scrollY / maxScroll > 0.6) {
         window.removeEventListener("scroll", onScroll);
         open();
       }
-    },
-    { passive: true }
-  );
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { maxScroll = 0; });
 })();

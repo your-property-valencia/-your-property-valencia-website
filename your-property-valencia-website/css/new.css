@@ -1,0 +1,280 @@
+/* ============================================================
+   Your Property Valencia: NEW DESIGN (branch design/revamp)
+   Loaded AFTER styles.css. Palette from the homepage design system
+   (.open-design/design-systems/your-property-valencia/DESIGN.md).
+   Change the heading font in ONE place: --font-display below.
+   ============================================================ */
+
+:root {
+  --sun: #f8ad5c;
+  --sun-deep: #ca8535;
+  --terracotta: #9c5e09;
+  --ink: #2f4858;
+  --ink-deep: #1e2f3a;
+  --cream: #fff8f0;
+  --sand: #f3e6d6;
+  --coral: #f08577;
+  --coral-soft: #f7c3ba;
+  --on-ink-2: #c9d2d8;
+
+  /* remap the old tokens so every existing component picks up the new palette */
+  --brand: #f8ad5c;
+  --brand-strong: #9c5e09; /* used for text/links on cream */
+  --brand-soft: #f8ad5c;
+  --brand-tint: #f3e6d6;
+  --brand-tint-strong: #ead9c3;
+  --gold: #f8ad5c;
+  --surface: #fff8f0;
+  --surface-alt: #f3e6d6;
+  --card: #fffdf9;
+  --border: rgba(47, 72, 88, 0.16);
+  --muted: #53636f;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --shadow-sm: none;
+  --shadow-md: 0 10px 30px rgba(30, 47, 58, 0.12);
+  --shadow-lg: 0 18px 50px rgba(30, 47, 58, 0.16);
+
+  --font-display: "Plus Jakarta Sans", "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+h1, h2, h3, h4, .hi-title, .gateway__title, .figure__value, .stat__num, .case-metric b {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.figure__value, .stat__num, .case-metric b, .reviews__score {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+::selection { background: var(--sun); color: var(--ink-deep); }
+
+/* ---------- buttons: ink text on sun, never white on sun ---------- */
+.btn { --btn-fg: var(--ink-deep); border-radius: var(--radius); font-weight: 700; }
+.btn:hover { box-shadow: none; transform: none; }
+.btn-primary { --btn-bg: var(--sun); }
+.btn-primary:hover { background: var(--sun-deep); color: var(--ink-deep); }
+.btn-outline { --btn-bg: var(--ink); --btn-fg: var(--cream); border-color: var(--ink); }
+.btn-outline:hover { background: var(--ink-deep); color: var(--cream); }
+.btn-ghost-light { --btn-bg: var(--sun); --btn-fg: var(--ink-deep); border-color: var(--sun); }
+.btn-ghost-light:hover { background: var(--sun-deep); }
+a { color: var(--terracotta); }
+.eyebrow { color: var(--terracotta); letter-spacing: 0.14em; }
+.section--ink .eyebrow, .cta-band .eyebrow { color: var(--sun); }
+.lead { color: var(--muted); }
+
+/* ---------- header / footer with the new logo ---------- */
+.site-header { background: var(--ink); border-bottom: 0; }
+.brand img {
+  height: 30px; width: auto; background: none; padding: 0; border-radius: 0;
+}
+@media (max-width: 480px) { .brand img { height: 22px; } }
+.nav-menu a:not(.btn) { color: var(--cream); }
+.nav-menu a:not(.btn):hover { color: var(--sun); }
+.site-footer { background: var(--ink-deep); color: var(--on-ink-2); }
+.site-footer a { color: var(--on-ink-2); }
+.site-footer a:hover { color: var(--sun); }
+.footer-logo { display: block; height: 28px; width: auto; margin-bottom: 1rem; }
+.footer-brand span { color: var(--sun); }
+
+/* ---------- hero: two clearly different paths ---------- */
+.gateway__panel {
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: clamp(5rem, 14vh, 7.5rem) clamp(1.5rem, 5vw, 4.5rem) clamp(13rem, 36vh, 20rem);
+}
+.gateway__panel--beginner { background: var(--sun); color: var(--ink-deep); }
+.gateway__panel--investor { background: var(--ink); color: var(--cream); }
+/* the photo becomes a Valencian arch at the bottom of each panel */
+.gateway__panel::before {
+  inset: auto auto 0 clamp(1.5rem, 5vw, 4.5rem);
+  width: clamp(12rem, 20vw, 17rem);
+  height: clamp(12rem, 34vh, 19rem);
+  z-index: 0;
+  border-radius: 999px 999px 0 0;
+  background-size: cover;
+  background-position: center;
+}
+.gateway__panel--beginner::before { box-shadow: 0 0 0 10px rgba(255, 248, 240, 0.5); }
+.gateway__panel--investor::before { box-shadow: 0 0 0 10px rgba(248, 173, 92, 0.35); }
+.gateway__panel::after { display: none; }
+@media (hover: hover) and (min-width: 900px) {
+  .gateway__panel:hover::before { transform: none; }
+}
+/* big numeral tells you at a glance there are two doors */
+.gateway__tag {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  margin: 0 0 1.2rem;
+  font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.gateway__tag b {
+  display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  font-family: var(--font-display); font-size: 1rem; letter-spacing: 0;
+}
+.gateway__panel--beginner .gateway__tag { color: var(--ink-deep); }
+.gateway__panel--beginner .gateway__tag b { background: var(--ink); color: var(--cream); }
+.gateway__panel--investor .gateway__tag { color: var(--sun); }
+.gateway__panel--investor .gateway__tag b { background: var(--sun); color: var(--ink-deep); }
+.gateway__inner { align-items: flex-start; max-width: 32rem; gap: 1.2rem; }
+.gateway__title {
+  text-shadow: none;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  line-height: 1.04;
+}
+.gateway__panel--beginner .gateway__title { color: var(--ink-deep); }
+.gateway__panel--investor .gateway__title { color: var(--cream); }
+.gateway__text { text-shadow: none; font-weight: 500; min-height: 0 !important; }
+.gateway__panel--beginner .gateway__text { color: var(--ink-deep); }
+.gateway__panel--investor .gateway__text { color: var(--on-ink-2); }
+.gateway__btn { border-radius: var(--radius); padding: 0.85rem 1.4rem; gap: 0.7rem; margin-top: 0.4rem; font-weight: 700; }
+.gateway__btn svg { width: 1.2rem; height: 1.2rem; padding: 0; background: none; border-radius: 0; }
+.gateway__panel--beginner .gateway__btn { background: var(--ink); color: var(--cream); }
+.gateway__panel--beginner .gateway__btn svg { color: var(--sun); }
+.gateway__panel--beginner .gateway__btn:hover { background: var(--ink-deep); }
+.gateway__panel--investor .gateway__btn { background: var(--sun); color: var(--ink-deep); }
+.gateway__panel--investor .gateway__btn svg { color: var(--ink-deep); }
+.gateway__panel--investor .gateway__btn:hover { background: var(--sun-deep); }
+.gateway__intro {
+  background: var(--cream); color: var(--ink); border-radius: var(--radius);
+  backdrop-filter: none; -webkit-backdrop-filter: none; text-transform: none;
+}
+.gateway__cue { color: var(--ink-deep); text-shadow: none; }
+@media (min-width: 900px) {
+  .gateway__panel--investor .gateway__inner { padding-left: 0; }
+  .gateway__cue { color: var(--cream); }
+}
+@media (max-width: 899px) {
+  .gateway__panel { min-height: 0; padding-bottom: clamp(12.5rem, 52vw, 16rem); padding-top: 4.4rem; }
+  .gateway__panel--investor { padding-top: 2.6rem; }
+  .gateway__panel::before { width: 11rem; height: 11rem; }
+}
+
+/* ---------- Hi, I'm Sara ---------- */
+.hi-title { font-weight: 800; font-size: clamp(2.6rem, 5.4vw, 4rem); line-height: 1; }
+.media-portrait img { border-radius: 999px 999px 8px 8px; }
+.signature strong { font-family: var(--font-display); font-weight: 800; }
+.check-list li::before {
+  background-color: var(--sun);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231e2f3a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+
+/* ---------- Why Valencia: ink section with sun numbers ---------- */
+#why-valencia { background: var(--ink); color: var(--cream); }
+#why-valencia h2 { color: var(--cream); }
+#why-valencia .eyebrow { color: var(--sun); }
+#why-valencia .lead { color: var(--on-ink-2); }
+#why-valencia .figure { background: transparent; border: 0; border-top: 2px solid var(--sun); border-radius: 0; padding: 1.2rem 0 0; }
+#why-valencia .figure__value { color: var(--sun); font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 800; line-height: 1; }
+#why-valencia .figure__text { color: var(--cream); }
+#why-valencia .form-note { color: var(--on-ink-2); }
+#why-valencia .why-gallery img { border-radius: 8px; }
+
+/* ---------- "How can I help you": two clearly different cards ---------- */
+.card { box-shadow: none; }
+.how-card { border: 0; border-radius: 12px; padding-bottom: 1.8rem; }
+.how-card:nth-child(1) { background: var(--sun); color: var(--ink-deep); }
+.how-card:nth-child(2) { background: var(--ink); color: var(--cream); }
+.how-card h3 { font-size: 1.9rem; font-weight: 800; }
+.how-card:nth-child(1) h3, .how-card:nth-child(1) .how-card__tag, .how-card:nth-child(1) li { color: var(--ink-deep); }
+.how-card:nth-child(2) h3 { color: var(--sun); }
+.how-card:nth-child(2) .how-card__tag { color: var(--cream); }
+.how-card:nth-child(2) li { color: var(--cream); }
+.how-card:nth-child(1) a { color: var(--ink-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.how-card:nth-child(2) a { color: var(--sun); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.how-card:nth-child(1) .check-list li::before { background-color: var(--ink); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23f8ad5c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); }
+.how-card:nth-child(2) .check-list li::before { background-color: var(--sun); }
+.how-card__img { border-radius: 0; }
+
+/* ---------- Case studies: three colourful cards ---------- */
+.case-card { border: 0; border-radius: 12px; box-shadow: none; }
+.case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.case-card__body { padding: 1.5rem 1.5rem 1.7rem; flex: 1; }
+.case-card__loc { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; text-transform: none; }
+.case-metrics { gap: 0.5rem; }
+.case-metric { background: rgba(255, 255, 255, 0.5); border-radius: 6px; }
+.case-metric b { font-size: 1.35rem; font-weight: 800; }
+.case-metric span { color: inherit; opacity: 0.85; }
+.case-card p { margin-bottom: 0; }
+.grid-3 > .case-card:nth-child(1) { background: var(--sun); color: var(--ink-deep); }
+.grid-3 > .case-card:nth-child(1) .case-card__loc { color: var(--ink-deep); }
+.grid-3 > .case-card:nth-child(2) { background: var(--ink); color: var(--cream); }
+.grid-3 > .case-card:nth-child(2) .case-card__loc { color: var(--sun); }
+.grid-3 > .case-card:nth-child(2) .case-metric { background: rgba(255, 248, 240, 0.1); }
+.grid-3 > .case-card:nth-child(2) .case-metric b { color: var(--sun); }
+.grid-3 > .case-card:nth-child(2) .case-metric span { color: var(--cream); }
+.grid-3 > .case-card:nth-child(3) { background: var(--coral-soft); color: var(--ink-deep); }
+.grid-3 > .case-card:nth-child(3) .case-card__loc { color: var(--ink-deep); }
+.grid-3 > .case-card:nth-child(3) .case-metric { background: rgba(255, 248, 240, 0.6); }
+
+/* ---------- Reviews: look like Google reviews ---------- */
+#reviews { background: var(--sand); }
+.reviews__summary {
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 0.9rem;
+  background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1.1rem;
+  font-family: "Geist", system-ui, sans-serif; font-size: 0.95rem;
+}
+.reviews__summary::before {
+  content: ""; width: 1.5rem; height: 1.5rem; flex: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23EA4335' d='M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z'/%3E%3Cpath fill='%234285F4' d='M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z'/%3E%3Cpath fill='%23FBBC05' d='M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z'/%3E%3Cpath fill='%2334A853' d='M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.reviews__score { font-family: "Geist", system-ui, sans-serif; font-size: 1.5rem; font-weight: 700; }
+.stars { color: #fbbc04; letter-spacing: 0.08em; }
+.review-card {
+  position: relative; gap: 0.5rem;
+  background: #fff; border: 1px solid #dadce0; border-radius: 8px; padding: 1.1rem 1.2rem 1.3rem;
+  font-family: "Geist", system-ui, sans-serif;
+}
+.review-card::after {
+  content: ""; position: absolute; top: 1.1rem; right: 1.1rem; width: 1.15rem; height: 1.15rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23EA4335' d='M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z'/%3E%3Cpath fill='%234285F4' d='M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z'/%3E%3Cpath fill='%23FBBC05' d='M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z'/%3E%3Cpath fill='%2334A853' d='M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+/* Google order: person first, then stars, then the text */
+.review-card figcaption { order: -1; margin-top: 0; padding: 0 1.6rem 0.3rem 0; }
+.review-card figcaption strong { display: block; font-size: 0.95rem; color: #202124; font-weight: 600; letter-spacing: 0; }
+.review-card figcaption small { color: #5f6368; font-size: 0.78rem; }
+.review-card .stars { order: 0; font-size: 1rem; }
+.review-card blockquote { order: 1; font-family: "Geist", system-ui, sans-serif; font-size: 0.95rem; line-height: 1.55; color: #202124; letter-spacing: -0.01em; }
+.review-card blockquote::before, .review-card blockquote::after { content: none; }
+.review-card__avatar { width: 2.5rem; height: 2.5rem; color: #fff; font-family: "Geist", system-ui, sans-serif; }
+.review-card:nth-child(6n+1) .review-card__avatar { background: #1e8e3e; }
+.review-card:nth-child(6n+2) .review-card__avatar { background: #8e24aa; }
+.review-card:nth-child(6n+3) .review-card__avatar { background: #d93025; }
+.review-card:nth-child(6n+4) .review-card__avatar { background: #1a73e8; }
+.review-card:nth-child(6n+5) .review-card__avatar { background: #e37400; }
+.review-card:nth-child(6n+6) .review-card__avatar { background: #3c4043; }
+
+/* ---------- other components pick up the palette ---------- */
+.cta-band { background: var(--sun); color: var(--ink-deep); border-radius: 12px; }
+.cta-band h2, .cta-band p { color: var(--ink-deep); }
+.cta-band .eyebrow { color: var(--ink-deep); }
+.cta-band .btn-primary { --btn-bg: var(--ink); --btn-fg: var(--cream); }
+.cta-band .btn-primary:hover { background: var(--ink-deep); color: var(--cream); }
+.figure { box-shadow: none; }
+.step__n, .journey__n, .package__flag { background: var(--sun); color: var(--ink-deep); }
+.package--featured { border-color: var(--sun); }
+.newsletter-band { background: var(--ink); }
+.pill { background: var(--sand); color: var(--ink); }
+.page-hero { color: var(--cream); }
+.cs__hero { background: var(--ink); }
+.cs__kicker { color: var(--sun); }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--sun-deep); outline-color: var(--sun); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.site-header a:focus-visible, .site-footer a:focus-visible, .gateway__panel--investor a:focus-visible { outline-color: var(--sun); }
+
+/* the arches fill the bottom of the hero, so the scroll cue is not needed */
+.gateway__cue { display: none; }
+
+@media (max-width: 899px) {
+  .gateway__intro {
+    position: static; transform: none; width: auto; max-width: none;
+    border-radius: 0; padding: 0.7rem 1rem; background: var(--ink-deep); color: var(--cream);
+  }
+  .gateway__panel--beginner { padding-top: 2.4rem; }
+}
+.nav-menu .btn { white-space: nowrap; }
