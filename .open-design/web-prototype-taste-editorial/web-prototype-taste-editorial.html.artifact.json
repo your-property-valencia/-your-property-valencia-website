@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Homepage prototype",
+  "entry": ".open-design/web-prototype-taste-editorial/web-prototype-taste-editorial.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "standalone",
+    "site",
+    "png",
+    "jpeg",
+    "pdf"
+  ],
+  "createdAt": "2026-11-04T10:57:40.578Z",
+  "updatedAt": "2026-11-04T11:00:12.252Z",
+  "sourceSkillId": "od:other:web-prototype-taste-editorial",
+  "designSystemId": "user:your-property-valencia",
+  "metadata": {
+    "remixedFrom": "od:other:web-prototype-taste-editorial:example",
+    "exports": [
+      {
+        "path": ".open-design/web-prototype-taste-editorial/exports/web-prototype-taste-editorial.jpg",
+        "width": 780,
+        "height": 24067,
+        "scale": 2,
+        "format": "jpeg",
+        "exportedAt": "2026-11-04T10:59:42.351Z"
+      },
+      {
+        "path": ".open-design/web-prototype-taste-editorial/exports/web-prototype-taste-editorial.html",
+        "format": "standalone",
+        "bytes": 2391185,
+        "exportedAt": "2026-11-04T10:59:54.103Z"
+      }
+    ],
+    "shares": [
+      {
+        "provider": "claude-artifact",
+        "url": "https://claude.ai/artifact/4YmebaZxbsR9c2Kagmczhh",
+        "publishedAt": "2026-11-04T11:00:12.248Z",
+        "siteRef": "https://claude.ai/artifact/4YmebaZxbsR9c2Kagmczhh"
+      }
+    ]
+  }
+}
