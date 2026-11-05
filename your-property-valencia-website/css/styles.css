@@ -2447,13 +2447,3 @@ strong {
   flex-wrap: wrap;
   gap: 0.4rem 1.2rem;
 }
-
-/* phones get small hero pictures (the washes cover them, so detail is not needed) */
-@media (max-width: 899px) {
-  .gateway__panel--beginner::before {
-    background-image: url("../images/valencia-warm-m.jpg");
-  }
-  .gateway__panel--investor::before {
-    background-image: url("../images/valencia-city-m.jpg");
-  }
-}

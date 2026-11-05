@@ -1,2 +1,0 @@
-# Send the old Netlify address to the real domain, keeping the page path
-https://your-property-valencia-website.netlify.app/* https://yourpropertyvalencia.com/:splat 301!
